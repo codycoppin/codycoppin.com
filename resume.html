@@ -80,6 +80,8 @@ nav {
 .resume-header {
   padding-bottom: 2rem;
   border-bottom: var(--border);
+  border-left: 4px solid var(--blue);
+  padding-left: 1.5rem;
 }
 
 .resume-name {
@@ -110,7 +112,7 @@ nav {
 /* ─── Sections ─── */
 .section {
   padding: 2rem 0;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid var(--blue);
 }
 
 .section:last-child { border-bottom: none; }
@@ -215,7 +217,7 @@ nav {
   content: '—';
   position: absolute;
   left: 0;
-  color: var(--muted);
+  color: var(--blue);
 }
 
 /* ─── Skills ─── */
@@ -247,7 +249,7 @@ nav {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 1.5px solid var(--ink);
+  border: 1.5px solid var(--blue);
   padding: 0.18rem 0.5rem;
   color: var(--ink);
 }
@@ -328,6 +330,7 @@ nav {
   <div class="nav-name"><a href="/">Cody Coppin</a></div>
   <div class="nav-right">
     <a href="/" class="nav-link">Home</a>
+    <a href="/cody-coppin-resume.pdf" class="nav-link" download>Download PDF ↓</a>
     <a href="mailto:codycoppin@gmail.com" class="nav-link">Get in touch ↗</a>
   </div>
 </nav>
