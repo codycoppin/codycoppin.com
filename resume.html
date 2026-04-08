@@ -111,7 +111,7 @@ nav {
 
 /* ─── Sections ─── */
 .section {
-  padding: 2rem 0;
+  padding: 1.2rem 0;
   border-bottom: 1px solid var(--blue);
 }
 
@@ -123,7 +123,7 @@ nav {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
 }
 
 /* ─── Summary ─── */
@@ -141,7 +141,9 @@ nav {
 
 /* ─── Entry ─── */
 .entry {
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
 
 .entry:last-child { margin-bottom: 0; }
@@ -257,6 +259,8 @@ nav {
 /* ─── Education ─── */
 .edu-entry {
   margin-bottom: 1rem;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
 .edu-entry:last-child { margin-bottom: 0; }
 
@@ -304,7 +308,9 @@ nav {
 @media print {
   nav { display: none; }
   .resume { padding: 0; }
-  .section { break-inside: avoid; }
+  .entry { page-break-inside: avoid; break-inside: avoid; }
+  .edu-entry { page-break-inside: avoid; break-inside: avoid; }
+  .skill-group { page-break-inside: avoid; break-inside: avoid; }
   body { font-size: 10pt; }
 }
 
