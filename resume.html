@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume — Cody Coppin</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white:  #fafaf8;
+  --ink:    #111110;
+  --blue:   #b0cde8;
+  --muted:  #888;
+  --border: 2px solid #111110;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Nav ─── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3rem;
+  border-bottom: var(--border);
+  animation: fadeUp 0.5s ease both;
+}
+
+.nav-name {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.nav-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--ink); }
+
+/* ─── Resume container ─── */
+.resume {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem;
+  animation: fadeUp 0.65s 0.05s ease both;
+}
+
+/* ─── Header ─── */
+.resume-header {
+  padding-bottom: 2rem;
+  border-bottom: var(--border);
+}
+
+.resume-name {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.resume-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+.resume-meta a, .resume-meta span {
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.resume-meta a:hover { color: var(--ink); }
+
+/* ─── Sections ─── */
+.section {
+  padding: 2rem 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+/* ─── Summary ─── */
+.summary {
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.summary strong {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ─── Entry ─── */
+.entry {
+  margin-bottom: 2rem;
+}
+
+.entry:last-child { margin-bottom: 0; }
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.entry-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1;
+  color: var(--ink);
+}
+
+.entry-role {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.entry-detail {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.8rem;
+}
+
+.entry-detail a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.entry-detail a:hover { color: var(--ink); }
+
+.entry-desc {
+  font-size: 0.64rem;
+  line-height: 1.9;
+  color: #555;
+}
+
+.entry-sub {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.entry-list {
+  list-style: none;
+  padding: 0;
+}
+
+.entry-list li {
+  font-size: 0.64rem;
+  line-height: 1.9;
+  color: #555;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.entry-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+/* ─── Skills ─── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.skill-group {}
+
+.skill-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tag {
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--ink);
+  padding: 0.18rem 0.5rem;
+  color: var(--ink);
+}
+
+/* ─── Education ─── */
+.edu-entry {
+  margin-bottom: 1rem;
+}
+.edu-entry:last-child { margin-bottom: 0; }
+
+.edu-name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.edu-detail {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-top: 0.2rem;
+}
+
+/* ─── Footer ─── */
+.resume-footer {
+  border-top: var(--border);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.resume-footer-left {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.resume-footer-right a {
+  font-size: 0.58rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.resume-footer-right a:hover { color: var(--ink); }
+
+/* ─── Print ─── */
+@media print {
+  nav { display: none; }
+  .resume { padding: 0; }
+  .section { break-inside: avoid; }
+  body { font-size: 10pt; }
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 700px) {
+  nav { padding: 1.25rem 1.5rem; }
+  .resume { padding: 1.5rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .entry-header { flex-direction: column; gap: 0.2rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name"><a href="/">Cody Coppin</a></div>
+  <div class="nav-right">
+    <a href="/" class="nav-link">Home</a>
+    <a href="mailto:codycoppin@gmail.com" class="nav-link">Get in touch ↗</a>
+  </div>
+</nav>
+
+<div class="resume">
+
+  <div class="resume-header">
+    <div class="resume-name">Cody<br>Coppin</div>
+    <div class="resume-meta">
+      <span>Austin, TX</span>
+      <a href="mailto:codycoppin@gmail.com">codycoppin@gmail.com</a>
+      <a href="https://codycoppin.com">codycoppin.com</a>
+      <a href="https://linkedin.com/in/codycoppin" target="_blank" rel="noopener">linkedin.com/in/codycoppin ↗</a>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="section">
+    <div class="section-label">Summary</div>
+    <p class="summary">
+      Digital product leader and creative with <strong>15+ years</strong> working across the full stack of web — from strategy and UX to production engineering and AI. I build things: products, agencies, campaigns, and bands. Currently running <strong>NextLocal AI</strong>, an Austin-based agency pioneering AI Optimization for local businesses, while serving as a senior digital specialist at <strong>Flex</strong>. I work best at the intersection of technology, culture, and craft.
+    </p>
+  </div>
+
+  <!-- Ventures -->
+  <div class="section">
+    <div class="section-label">Ventures</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">NextLocal AI</div>
+        <div class="entry-role">Founder</div>
+      </div>
+      <div class="entry-detail">Austin, TX · 2025–Present · <a href="https://nextlocal.ai" target="_blank" rel="noopener">nextlocal.ai ↗</a></div>
+      <p class="entry-desc">AI Optimization (AIO) agency for local businesses. While traditional SEO chases Google rankings, NextLocal targets a faster-growing channel: the AI-generated recommendations appearing in ChatGPT, Perplexity, and Google AI Overviews. Services include entity optimization, Google Business Profile management, citation building, and structured data implementation — done-for-you, built for the way people already search.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">moodplay</div>
+        <div class="entry-role">Creator & Developer</div>
+      </div>
+      <div class="entry-detail">2025–Present · <a href="https://moodplay-phi.vercel.app" target="_blank" rel="noopener">moodplay-phi.vercel.app ↗</a></div>
+      <p class="entry-desc">AI-powered web app that curates personalized Spotify playlists with a 3-act emotional arc. Users describe where they want to go emotionally; Claude engineers the shift. Built on Next.js (App Router), TypeScript, Tailwind CSS, and the Claude API. Integrated Spotify OAuth, parallel API calls, SSE streaming, and a rolling 200-track localStorage blocklist to ensure genuine discovery on every session.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Stares</div>
+        <div class="entry-role">Co-Founder, Songwriter</div>
+      </div>
+      <div class="entry-detail">Austin, TX · 2025–Present · <a href="https://stares.band" target="_blank" rel="noopener">stares.band ↗</a></div>
+      <p class="entry-desc">Shoegaze / 90s alt four-piece. Released four demo tracks on Bandcamp. Debut Austin show June 4, 2025 at 13th Floor. Influenced by My Bloody Valentine, DIIV, Nirvana, and Smashing Pumpkins.</p>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="section">
+    <div class="section-label">Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Flex</div>
+        <div class="entry-role">Digital Marketing Specialist</div>
+      </div>
+      <div class="entry-detail">Austin, TX · Full-time · November 2019–Present (6+ years)</div>
+
+      <div class="entry-sub">Senior responsibilities (2019–2022)</div>
+      <ul class="entry-list">
+        <li>Directed web strategy and content production across enterprise properties</li>
+        <li>Managed sprint planning and backlog grooming with dev/UX teams</li>
+        <li>Served as project manager for web and marketing initiatives</li>
+        <li>Led daily stand-ups and maintained production calendars</li>
+        <li>Acted as Product Owner for CRO testing and implementation</li>
+        <li>Oversaw UX strategy and testing, using data to inform design decisions</li>
+        <li>Administered Sitecore CMS and coordinated cross-functional teams</li>
+      </ul>
+
+      <div class="entry-sub">Current focus (2022–Present)</div>
+      <ul class="entry-list">
+        <li>Execute front-end production in WordPress with emphasis on UX and accessibility</li>
+        <li>Support UX strategy for internal and external platforms</li>
+        <li>Manage WordPress, Brightcove, and YouTube systems</li>
+        <li>Qualify inbound leads and optimize user flow</li>
+        <li>Enhance UX across internal platforms including SharePoint</li>
+        <li>Track and report metrics using Google Analytics, Act-On, and SharePoint analytics</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Freelance</div>
+        <div class="entry-role">Digital Marketing Consultant</div>
+      </div>
+      <div class="entry-detail">Austin, TX · September 2015–November 2018 (3 years)</div>
+      <ul class="entry-list">
+        <li>Delivered end-to-end digital marketing for small business clients</li>
+        <li>Customized and maintained WordPress websites</li>
+        <li>Managed contracts, invoicing, and client communications</li>
+        <li>Created self-marketing strategies to acquire new clients</li>
+        <li>Negotiated service agreements and delivered on time and on budget</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">SSTAK LLC</div>
+        <div class="entry-role">Music Producer & Artist</div>
+      </div>
+      <div class="entry-detail">Austin, TX · January 2008–November 2018 (10 years)</div>
+      <p class="entry-desc">Audio engineering, mixing, lyric and performance composition, sound design. Released original music and produced for other artists across a decade-long independent career in Austin.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">SecureNet Payments</div>
+        <div class="entry-role">Digital Marketing Manager</div>
+      </div>
+      <div class="entry-detail">Austin, TX · March 2013–March 2015 (2 years)</div>
+      <ul class="entry-list">
+        <li>Led SEM strategy and campaigns, meeting growth KPIs</li>
+        <li>Built email automation workflows and wrote campaign copy</li>
+        <li>Created reporting systems to measure and improve ROI</li>
+        <li>Supported sales alignment and managed messaging for product launches</li>
+        <li>Maintained relationships with stakeholders and vendors</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Marketing Clique</div>
+        <div class="entry-role">Digital Marketing Manager</div>
+      </div>
+      <div class="entry-detail">Austin, TX · June 2010–April 2013 (3 years)</div>
+      <ul class="entry-list">
+        <li>Managed SEO strategy and client account performance</li>
+        <li>Advised clients on digital presence and site improvements</li>
+        <li>Represented company at trade shows and industry events</li>
+        <li>Delivered digital solutions and maintained client satisfaction</li>
+        <li>Consistently exceeded sales quotas, ranked top in performance</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-label">Product & Strategy</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Product Ownership</span>
+          <span class="skill-tag">UX Strategy</span>
+          <span class="skill-tag">CRO</span>
+          <span class="skill-tag">Sprint Planning</span>
+          <span class="skill-tag">Roadmapping</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">AI & Emerging Tech</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AIO</span>
+          <span class="skill-tag">Claude API</span>
+          <span class="skill-tag">Prompt Engineering</span>
+          <span class="skill-tag">Structured Data</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Engineering</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Tailwind</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">OAuth</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Marketing & Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SEO/SEM</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Google Ads</span>
+          <span class="skill-tag">Email Automation</span>
+          <span class="skill-tag">Content Strategy</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Creative</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Audio Engineering</span>
+          <span class="skill-tag">Mixing</span>
+          <span class="skill-tag">Production</span>
+          <span class="skill-tag">Sound Design</span>
+          <span class="skill-tag">Copywriting</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Sitecore</span>
+          <span class="skill-tag">Brightcove</span>
+          <span class="skill-tag">SharePoint</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="section-label">Education</div>
+
+    <div class="edu-entry">
+      <div class="edu-name">St. Edward's University</div>
+      <div class="edu-detail">Bachelor of Arts, Fine Arts · 2002–2006 · Austin, TX</div>
+      <div class="edu-detail">Activities: Theatre Production, Acting</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-name">Scrum Alliance</div>
+      <div class="edu-detail">Certified Scrum Master, Agile Scrum</div>
+    </div>
+  </div>
+
+  <div class="resume-footer">
+    <div class="resume-footer-left">codycoppin.com · Austin, TX · © 2026</div>
+    <div class="resume-footer-right"><a href="mailto:codycoppin@gmail.com">codycoppin@gmail.com ↗</a></div>
+  </div>
+
+</div>
+
+</body>
+</html>
