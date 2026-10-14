@@ -279,26 +279,28 @@ nav {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 1.5px solid var(--ink);
+  border: 1.5px solid #c9c9c9;
   padding: 0.18rem 0.5rem;
-  color: var(--ink);
-  transition: background 0.2s, color 0.2s;
+  color: var(--muted);
+  transition: border-color 0.2s, color 0.2s;
 }
 
-.project-row:hover .tag { background: var(--ink); color: var(--white); }
+.project-row:hover .tag { border-color: var(--muted); color: #666; }
 
 .project-link {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink);
   text-decoration: none;
+  border-bottom: 1.5px solid var(--blue);
+  padding-bottom: 0.15rem;
   display: flex;
   align-items: center;
   gap: 0.3rem;
   white-space: nowrap;
-  transition: color 0.2s;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .project-links {
@@ -314,7 +316,7 @@ nav {
 }
 
 .project-row:hover .project-link { color: var(--ink); }
-.project-link:hover { color: var(--ink); }
+.project-link:hover { border-bottom-color: var(--ink); }
 .project-row:hover .arrow { transform: translate(4px, -4px); }
 .project-row:hover .arrow-right { transform: translate(4px, 0); }
 
