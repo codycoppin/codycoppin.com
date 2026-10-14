@@ -293,6 +293,7 @@ nav {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -306,7 +307,9 @@ nav {
 }
 
 .project-row:hover .project-link { color: var(--ink); }
+.project-link:hover { color: var(--ink); }
 .project-row:hover .arrow { transform: translate(4px, -4px); }
+.project-row:hover .arrow-right { transform: translate(4px, 0); }
 
 /* ─── Footer ─── */
 footer {
@@ -429,7 +432,7 @@ nav       { animation: fadeUp 0.5s ease both; }
   <div class="ph-left"><div class="label">Work</div></div>
   <div class="ph-right">
     <div class="label">Selected projects</div>
-    <div class="label">04 total</div>
+    <div class="label">05 total</div>
   </div>
 </div>
 
@@ -452,7 +455,7 @@ nav       { animation: fadeUp 0.5s ease both; }
   </div>
 </div>
 
-<a class="project-row" href="https://moodplay-phi.vercel.app" target="_blank" rel="noopener">
+<div class="project-row">
   <div class="project-left">
     <div class="project-index">02</div>
     <div class="project-type">App</div>
@@ -467,14 +470,34 @@ nav       { animation: fadeUp 0.5s ease both; }
         <span class="tag">Spotify</span>
         <span class="tag">TypeScript</span>
       </div>
-      <div class="project-link">Visit <span class="arrow">↗</span></div>
+      <a class="project-link" href="https://moodplay-phi.vercel.app" target="_blank" rel="noopener">Visit <span class="arrow">↗</span></a>
     </div>
   </div>
-</a>
+</div>
 
 <div class="project-row">
   <div class="project-left">
     <div class="project-index">03</div>
+    <div class="project-type">Venture</div>
+  </div>
+  <div class="project-right">
+    <div class="project-name">NextLocal AI</div>
+    <div class="project-desc">An agency for getting local businesses into AI search answers. I built an automated visibility audit and a multi-agent lead pipeline — then shut it down when the market math didn't work. The write-up covers why.</div>
+    <div class="project-footer">
+      <div class="project-tags">
+        <span class="tag">Make</span>
+        <span class="tag">Anthropic API</span>
+        <span class="tag">Apify</span>
+        <span class="tag">Agents</span>
+      </div>
+      <a class="project-link" href="/nextlocal.html">Read the write-up <span class="arrow arrow-right">→</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="project-row">
+  <div class="project-left">
+    <div class="project-index">04</div>
     <div class="project-type">System</div>
   </div>
   <div class="project-right">
@@ -490,9 +513,9 @@ nav       { animation: fadeUp 0.5s ease both; }
   </div>
 </div>
 
-<a class="project-row" href="https://stares.band" target="_blank" rel="noopener">
+<div class="project-row">
   <div class="project-left">
-    <div class="project-index">04</div>
+    <div class="project-index">05</div>
     <div class="project-type">Band</div>
   </div>
   <div class="project-right">
@@ -504,10 +527,10 @@ nav       { animation: fadeUp 0.5s ease both; }
         <span class="tag">Alt</span>
         <span class="tag">Austin</span>
       </div>
-      <div class="project-link">Listen <span class="arrow">↗</span></div>
+      <a class="project-link" href="https://stares.band" target="_blank" rel="noopener">Listen <span class="arrow">↗</span></a>
     </div>
   </div>
-</a>
+</div>
 
 <footer>
   <div class="footer-left"></div>

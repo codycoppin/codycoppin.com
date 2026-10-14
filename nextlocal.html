@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextLocal AI — Cody Coppin</title>
+<!-- ─── Primary Meta ─── -->
+<meta name="description" content="What I built for NextLocal AI, what the market said, and why I shut it down.">
+<meta name="author" content="Cody Coppin">
+<link rel="canonical" href="https://codycoppin.com/nextlocal.html">
+<!-- ─── Favicon ─── -->
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<!-- ─── Open Graph ─── -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://codycoppin.com/nextlocal.html">
+<meta property="og:title" content="NextLocal AI — Cody Coppin">
+<meta property="og:description" content="What I built for NextLocal AI, what the market said, and why I shut it down.">
+<meta property="og:image" content="https://codycoppin.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cody Coppin — AI Agent &amp; Product Builder, Austin TX">
+<meta property="og:site_name" content="Cody Coppin">
+<meta property="og:locale" content="en_US">
+<!-- ─── Twitter / X Card ─── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://codycoppin.com/nextlocal.html">
+<meta name="twitter:title" content="NextLocal AI — Cody Coppin">
+<meta name="twitter:description" content="What I built for NextLocal AI, what the market said, and why I shut it down.">
+<meta name="twitter:image" content="https://codycoppin.com/og-image.png">
+<meta name="twitter:image:alt" content="Cody Coppin — AI Agent &amp; Product Builder, Austin TX">
+<!-- ─── Theme / Mobile ─── -->
+<meta name="theme-color" content="#fafaf8">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white:  #fafaf8;
+  --ink:    #111110;
+  --blue:   #b0cde8;
+  --muted:  #888;
+  --border: 2px solid #111110;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Nav ─── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3rem;
+  border-bottom: var(--border);
+  animation: fadeUp 0.5s ease both;
+}
+
+.nav-name {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.nav-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--ink); }
+
+/* ─── Essay container ─── */
+.essay {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem;
+  animation: fadeUp 0.65s 0.05s ease both;
+}
+
+/* ─── Header ─── */
+.essay-header {
+  padding-bottom: 2rem;
+  border-bottom: var(--border);
+}
+
+.essay-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  color: var(--ink);
+  border-left: 4px solid var(--blue);
+  padding-left: 1.5rem;
+}
+
+.essay-subhead {
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: 1.2rem;
+  margin-left: calc(1.5rem + 4px);
+}
+
+.essay-meta {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 1.2rem;
+  margin-left: calc(1.5rem + 4px);
+}
+
+/* ─── Body ─── */
+.essay-body {
+  padding-top: 2rem;
+}
+
+.essay-body p {
+  font-size: 0.82rem;
+  line-height: 2;
+  color: #333;
+  max-width: 65ch;
+  margin-bottom: 1.4rem;
+}
+
+.essay-body p:last-child { margin-bottom: 0; }
+
+.essay-heading {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--blue);
+}
+
+/* ─── Footer ─── */
+.essay-footer {
+  border-top: var(--border);
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.essay-back {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+.essay-back:hover { color: var(--ink); }
+
+.essay-back .arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.essay-back:hover .arrow { transform: translateX(-4px); }
+
+.essay-footer-right {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 700px) {
+  nav { padding: 1.25rem 1.5rem; }
+  .nav-right { gap: 1.25rem; }
+  .essay { padding: 1.5rem; }
+  .essay-body p { font-size: 0.8rem; line-height: 1.95; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name"><a href="/">Cody Coppin</a></div>
+  <div class="nav-right">
+    <a href="/" class="nav-link">Home</a>
+    <a href="mailto:codycoppin@gmail.com" class="nav-link">Get in touch ↗</a>
+  </div>
+</nav>
+
+<div class="essay">
+
+  <div class="essay-header">
+    <h1 class="essay-title">NextLocal AI</h1>
+    <p class="essay-subhead">The pipeline worked. The business didn't.</p>
+  </div>
+
+  <div class="essay-body">
+
+    <p>In March 2026 I started NextLocal AI to help local businesses show up when people ask AI assistants for recommendations. More people are asking ChatGPT or Google's AI Overviews "who's a good dentist near me" instead of scrolling search results, and most small businesses have no idea whether they appear in those answers. I wanted to find out, measure it, and fix it.</p>
+
+    <h2 class="essay-heading">What I built</h2>
+
+    <p>The core was the AI Visibility Report, a free audit used as a lead magnet. A business entered its name, and an automated pipeline pulled its Google Business Profile, its reviews, and its citations across the web. The Anthropic API then graded it in five categories: Business Profile, Reviews, Citations, Website, and Discoverability. A finished report landed in the owner's inbox. No human touched it between the request and the email.</p>
+
+    <p>The second piece found the prospects. I designed a multi-agent lead pipeline that pulled businesses from Google Maps with Apify, ran each through the audit, found the decision-maker's contact through Hunter, and loaded them into Instantly for outreach. It produced qualified leads for about $4.39 each.</p>
+
+    <h2 class="essay-heading">What broke</h2>
+
+    <p>My one real prospect was a law firm, and the audit got their identity wrong. It pulled data for a different business entirely. I caught it before it reached them and rebuilt my pitch so it made no claims that depended on that data. The lesson stuck: an automated system that's confidently wrong is worse than one that admits it doesn't know, and nothing it produces should reach a customer unchecked. I've carried that rule into everything I've built since.</p>
+
+    <h2 class="essay-heading">What the market said</h2>
+
+    <p>My first pitch went to the friendliest customer I had: a family member who runs a construction business. They told me, kindly, that they couldn't afford me. I should have taken that more seriously than I did. It was the first sign that the businesses most exposed to this problem were the ones least able to pay to fix it.</p>
+
+    <p>I emailed about a thousand local businesses. I got one reply, and it was an unsubscribe.</p>
+
+    <p>The only real lead came in the other direction: the law firm found my site through search. I quoted $999 a month for a three-month commitment, and they went quiet. I doubt it was the price, since law firms spend more than that on marketing every month. More likely it was proof: I was a new agency in a new category with no case studies.</p>
+
+    <p>The irony wasn't lost on me. An agency selling search visibility got its only lead from people finding it through search.</p>
+
+    <h2 class="essay-heading">Why I stopped</h2>
+
+    <p>Two things became clear.</p>
+
+    <p>First, AI visibility was a feature, not a product. Established SEO agencies were already adding it to services they sold to clients who already trusted them. As a specialist, I was selling one item against a bundle.</p>
+
+    <p>Second, I'd have had to create the demand before I could meet it. Most local businesses didn't yet believe AI search affected them, so every sale meant convincing them the problem was real before I could pitch the fix. The one lead that came to me already believed it, which is why inbound worked when outbound didn't.</p>
+
+    <p>Running it alongside a full-time job, I could see that winning customers would take 40 to 50 hours a week of selling. I shut it down in October 2026.</p>
+
+    <h2 class="essay-heading">What I'd do differently</h2>
+
+    <p>My test wasn't conclusive, and I know that now. I never confirmed how many of those thousand emails reached an inbox. I spread outreach across too many kinds of business. And I ran it part-time, so a slow result was hard to tell apart from a bad one.</p>
+
+    <p>If I did it again, I'd commit six months and run it as a real experiment. I'd confirm the emails were landing before reading anything into the replies. I'd narrow to one vertical: law firms. Small trades couldn't absorb the cost, while law firms could. What they needed was proof. I'd offer the first few engagements at cost to get the case studies the market kept asking for. Most of all, I'd decide upfront what result would mean keep going and what would mean stop, so the decision didn't come down to a feeling.</p>
+
+    <h2 class="essay-heading">What I took from it</h2>
+
+    <p>Distribution decides more than the product does, and incumbents own distribution. A pipeline can work perfectly and the business can still fail. And an automated system is only as good as your ability to check what it's actually doing, which is the part of this work I'm now most interested in.</p>
+
+  </div>
+
+  <div class="essay-footer">
+    <a href="/" class="essay-back"><span class="arrow">←</span> Back to work</a>
+    <div class="essay-footer-right">codycoppin.com · Austin, TX · © 2026</div>
+  </div>
+
+</div>
+
+</body>
+</html>
