@@ -370,7 +370,6 @@ nav {
 
   <div class="resume-header">
     <div class="resume-name">Cody<br>Coppin</div>
-    <div class="resume-title">AI Agent &amp; Product Builder</div>
     <div class="resume-meta">
       <span>Austin, TX</span>
       <a href="mailto:codycoppin@gmail.com">codycoppin@gmail.com</a>
@@ -383,26 +382,13 @@ nav {
   <div class="section">
     <div class="section-label">Summary</div>
     <p class="summary">
-      I build AI agents and the products around them. 15 years in UX and digital product, the last seven on enterprise web at <strong>Flex</strong>, plus three AI products I designed and shipped myself: <strong>Hearth</strong>, a household finance advisor with its own Claude connector; <strong>Moodplay</strong>, a live Claude-powered playlist app; and <strong>NextLocal AI</strong>, an automated audit-and-outreach pipeline for local businesses. My strength is the part between the model and the people using it &mdash; scoping the job, wiring the systems together, and catching what breaks in real use that tests don't.
+      15 years in UX and digital product, the last seven on enterprise web at <strong>Flex</strong>, where my work sat between technical teams and the people who depend on them. I also build with AI: using Claude Code, I designed and shipped <strong>Hearth</strong>, a household finance advisor with its own Claude connector, and <strong>Moodplay</strong>, a live Claude-powered playlist app. I set the requirements, design and test; Claude Code writes the code. My strength is the part between the model and the people using it &mdash; scoping the job, wiring the systems together, and catching what breaks in real use that tests don't.
     </p>
   </div>
 
   <!-- Experience -->
   <div class="section">
     <div class="section-label">Experience</div>
-
-    <div class="entry">
-      <div class="entry-header">
-        <div class="entry-title">NextLocal AI</div>
-        <div class="entry-role">Founder</div>
-      </div>
-      <div class="entry-detail">Austin, TX · 2026</div>
-      <ul class="entry-list">
-        <li>Built the AI Visibility Report: a Make pipeline that pulls a local business's Google Places profile, reviews, and citations, has the Anthropic API grade it across five categories (Business Profile, Reviews, Citations, Website, Discoverability), and emails the finished report</li>
-        <li>Designed a multi-agent lead pipeline &mdash; Apify scraping &rarr; automated audit &rarr; Hunter contact lookup &rarr; Instantly outreach &mdash; at about $4.39 per qualified lead</li>
-        <li>Ran outreach to local dental practices; built the brand, site, and content myself</li>
-      </ul>
-    </div>
 
     <div class="entry">
       <div class="entry-header">
@@ -413,7 +399,8 @@ nav {
       <ul class="entry-list">
         <li>Owned the redesign of the corporate SharePoint home page for 150,000+ employees: restructured navigation, analyzed content to decide what went where, and coordinated the changes across teams</li>
         <li>Handled the content side of a ~1,500-page Sitecore-to-WordPress migration and redesign: content inventory and mapping, pruning, rewriting, page builds, QA, and developer coordination</li>
-        <li>Managed the relationships with the dev agency that administered Sitecore and with a third-party CRO testing vendor; ran the stand-ups</li>
+        <li>Managed the relationships with the dev agency that administered Sitecore and with a third-party CRO testing vendor: wrote feature, enhancement, and fix tickets in Jira, groomed the backlog, and ran the stand-ups</li>
+        <li>Used Microsoft Copilot as part of Flex's company-wide push to adopt it: writing page metadata, gathering website content data, and analyzing spreadsheets</li>
         <li>Worked hands-on in Sitecore and WordPress, plus Brightcove, YouTube, and SharePoint</li>
       </ul>
     </div>
@@ -465,16 +452,25 @@ nav {
     <div class="entry">
       <div class="entry-header">
         <div class="entry-title">Hearth</div>
-        <div class="entry-role">Creator &amp; Developer</div>
+        <div class="entry-role">Creator</div>
       </div>
       <div class="entry-detail">2026 · <a href="https://hearth-ledger-demo.fly.dev" target="_blank" rel="noopener">hearth-ledger-demo.fly.dev ↗</a></div>
-      <p class="entry-desc">Household finance advisor that recommends what to do next with a household's money, not just where it went. Pulls live bank data through SimpleFIN, runs on Fly.io, and exposes ten read-only tools to Claude through its own connector. A per-person privacy model scopes every query: shared household accounts are visible to both partners, personal spending stays private. 800+ automated tests &mdash; and the bugs that mattered (doubled interest, a drifting mortgage balance, a broken autopay counter) surfaced from my own review of the screens, then went back into the build. Python, FastAPI, SQLite.</p>
+      <p class="entry-desc">Household finance advisor that recommends what to do next with a household's money, not just where it went. Pulls live bank data through SimpleFIN, runs on Fly.io, and exposes ten read-only tools to Claude through its own connector. A per-person privacy model scopes every query: shared household accounts are visible to both partners, personal spending stays private. 800+ automated tests &mdash; and the bugs that mattered (doubled interest, a drifting mortgage balance, a broken autopay counter) surfaced from my own review of the screens, then went back into the build. I set the requirements, designed it, and tested it; Claude Code wrote the code (Python, FastAPI, SQLite).</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">NextLocal AI Visibility Report</div>
+        <div class="entry-role">Creator</div>
+      </div>
+      <div class="entry-detail">2026 · Retired</div>
+      <p class="entry-desc">Automated visibility audit for local businesses. A business fills out a form; a Make workflow pulls its Google Business Profile, reviews, and citations, the Claude API grades it across five categories and writes recommendations, and the finished report is emailed automatically, with no manual steps. Extended into an agent pipeline (Apify &rarr; audit &rarr; Hunter &rarr; Instantly) at about $4.39 per qualified lead.</p>
     </div>
 
     <div class="entry">
       <div class="entry-header">
         <div class="entry-title">moodplay</div>
-        <div class="entry-role">Creator &amp; Developer</div>
+        <div class="entry-role">Creator</div>
       </div>
       <div class="entry-detail">2026 · <a href="https://moodplay-phi.vercel.app" target="_blank" rel="noopener">moodplay-phi.vercel.app ↗</a></div>
       <p class="entry-desc">Describe a mood shift in plain language and Claude builds a Spotify playlist with a three-act emotional arc. Live. Built with Claude Code on Next.js, TypeScript, Tailwind CSS, and the Claude API, with Spotify OAuth and SSE streaming.</p>
@@ -505,6 +501,7 @@ nav {
           <span class="skill-tag">Prompt Engineering</span>
           <span class="skill-tag">Make</span>
           <span class="skill-tag">AI Optimization (AIO)</span>
+          <span class="skill-tag">Microsoft Copilot</span>
         </div>
       </div>
       <div class="skill-group">
@@ -517,10 +514,11 @@ nav {
           <span class="skill-tag">Vendor Management</span>
           <span class="skill-tag">Sprint Planning</span>
           <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Jira</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-label">Build Stack</div>
+        <div class="skill-label">Built With (via Claude Code)</div>
         <div class="skill-tags">
           <span class="skill-tag">Python</span>
           <span class="skill-tag">FastAPI</span>
