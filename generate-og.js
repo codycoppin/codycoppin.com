@@ -63,10 +63,10 @@ async function generate() {
   ctx.fillStyle = MUTED;
   ctx.font = '20px "Space Mono"';
   ctx.textBaseline = 'top';
-  ctx.fillText('Digital Marketing Specialist — Austin, TX', RIGHT_X, 358);
+  ctx.fillText('AI Agent & Product Builder — Austin, TX', RIGHT_X, 358);
 
   // Tags
-  const tags = ['UX', 'Front-End', 'CMS', 'Analytics'];
+  const tags = ['AI Agents', 'Product', 'UX', 'Claude'];
   const tagFont = '15px "Space Mono"';
   const tagPadX = 12;
   const tagPadY = 6;
