@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hearth — Cody Coppin</title>
+<!-- ─── Primary Meta ─── -->
+<meta name="description" content="How I built a household finance advisor that tells you what to do — and what broke when the tests all passed.">
+<meta name="author" content="Cody Coppin">
+<link rel="canonical" href="https://codycoppin.com/hearth.html">
+<!-- ─── Favicon ─── -->
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<!-- ─── Open Graph ─── -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://codycoppin.com/hearth.html">
+<meta property="og:title" content="Hearth — Cody Coppin">
+<meta property="og:description" content="How I built a household finance advisor that tells you what to do — and what broke when the tests all passed.">
+<meta property="og:image" content="https://codycoppin.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cody Coppin — AI Agent &amp; Product Builder, Austin TX">
+<meta property="og:site_name" content="Cody Coppin">
+<meta property="og:locale" content="en_US">
+<!-- ─── Twitter / X Card ─── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://codycoppin.com/hearth.html">
+<meta name="twitter:title" content="Hearth — Cody Coppin">
+<meta name="twitter:description" content="How I built a household finance advisor that tells you what to do — and what broke when the tests all passed.">
+<meta name="twitter:image" content="https://codycoppin.com/og-image.png">
+<meta name="twitter:image:alt" content="Cody Coppin — AI Agent &amp; Product Builder, Austin TX">
+<!-- ─── Theme / Mobile ─── -->
+<meta name="theme-color" content="#fafaf8">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white:  #fafaf8;
+  --ink:    #111110;
+  --blue:   #b0cde8;
+  --muted:  #888;
+  --border: 2px solid #111110;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Nav ─── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3rem;
+  border-bottom: var(--border);
+  animation: fadeUp 0.5s ease both;
+}
+
+.nav-name {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.nav-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--ink); }
+
+/* ─── Essay container ─── */
+.essay {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem;
+  animation: fadeUp 0.65s 0.05s ease both;
+}
+
+/* ─── Header ─── */
+.essay-header {
+  padding-bottom: 2rem;
+  border-bottom: var(--border);
+}
+
+.essay-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  color: var(--ink);
+  border-left: 4px solid var(--blue);
+  padding-left: 1.5rem;
+}
+
+.essay-subhead {
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: 1.2rem;
+  margin-left: calc(1.5rem + 4px);
+}
+
+.essay-meta {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 1.2rem;
+  margin-left: calc(1.5rem + 4px);
+}
+
+.essay-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  margin-top: 1.4rem;
+  margin-left: calc(1.5rem + 4px);
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--blue);
+  transition: border-color 0.2s;
+}
+.essay-demo:hover { border-color: var(--ink); }
+
+.essay-demo .arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.essay-demo:hover .arrow { transform: translate(3px, -3px); }
+
+/* ─── Body ─── */
+.essay-body {
+  padding-top: 2rem;
+}
+
+.essay-body p {
+  font-size: 0.82rem;
+  line-height: 2;
+  color: #333;
+  max-width: 65ch;
+  margin-bottom: 1.4rem;
+}
+
+.essay-body p:last-child { margin-bottom: 0; }
+
+/* This page opens on a heading where NextLocal opens on a paragraph, so the
+   first one would stack its blue rule under the header's own border with 5rem
+   of white between them. */
+.essay-body > .essay-heading:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.essay-heading {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--blue);
+}
+
+/* ─── Footer ─── */
+.essay-footer {
+  border-top: var(--border);
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.essay-back {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+.essay-back:hover { color: var(--ink); }
+
+.essay-back .arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.essay-back:hover .arrow { transform: translateX(-4px); }
+
+.essay-footer-right {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 700px) {
+  nav { padding: 1.25rem 1.5rem; }
+  .nav-right { gap: 1.25rem; }
+  .essay { padding: 1.5rem; }
+  .essay-body p { font-size: 0.8rem; line-height: 1.95; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name"><a href="/">Cody Coppin</a></div>
+  <div class="nav-right">
+    <a href="/" class="nav-link">Home</a>
+    <a href="mailto:codycoppin@gmail.com" class="nav-link">Get in touch ↗</a>
+  </div>
+</nav>
+
+<div class="essay">
+
+  <div class="essay-header">
+    <h1 class="essay-title">Hearth</h1>
+    <p class="essay-subhead">A finance app that tells you what to do, not just where your money went.</p>
+    <a class="essay-demo" href="https://hearth-ledger-demo.fly.dev" target="_blank" rel="noopener">Try the demo <span class="arrow">↗</span></a>
+  </div>
+
+  <div class="essay-body">
+
+    <h2 class="essay-heading">Why I built it</h2>
+
+    <p>We tried Monarch for our household, and we got nothing out of it. It had every transaction, every category, every chart, and no help. It showed us where the money went and left the hard part, deciding what to do next, to us.</p>
+
+    <p>So I built Hearth for my household. I built it with Claude Code. I made the product decisions and reviewed everything; it wrote most of the code. Hearth's job isn't to display our finances. Its job is to recommend the next move.</p>
+
+    <h2 class="essay-heading">What it does</h2>
+
+    <p>Hearth pulls live bank data through SimpleFIN and turns it into a short list of actions. Each one has a "Why?" link that shows the reasoning. Move this much into savings. Raise this card's autopay. This bill went up, so look at it. It tells us what's safe to spend in each account before the next payday, and it forecasts the lowest our balance will get under a typical month and a lean one.</p>
+
+    <p>The most useful part is the payoff plan. It told us which cards to pay off first and by how much, then projected that out over a year. We're following it.</p>
+
+    <h2 class="essay-heading">Two people, three kinds of money</h2>
+
+    <p>We run a yours, mine and ours setup: each of us has a personal checking account, and we share an account for bills and groceries. Most finance apps assume one person owns everything. That made the hardest design question one about people, not money: who gets to see what?</p>
+
+    <p>The answer became a privacy wall. Shared household accounts are visible to both of us, and personal spending stays private to its owner. Every query is scoped to whoever is asking. In the public demo, the "see it as Maya" link switches you to the other partner's view, and you can watch the wall move.</p>
+
+    <h2 class="essay-heading">Letting Claude in</h2>
+
+    <p>Hearth has its own connector, so either of us can ask Claude questions about our money directly. It exposes ten read-only tools. The important design decision was that Claude gets exactly the same wall as the screens. The login a person uses determines whose money Claude can ask about, and when the wall refuses, that refusal is final. Claude can't reword its way around it. The tools also can't move money or change anything. They answer questions and that's all.</p>
+
+    <p>Deciding what an AI agent is allowed to see, and making sure no clever phrasing gets around that limit, is the question I find most interesting in this project.</p>
+
+    <h2 class="essay-heading">What broke</h2>
+
+    <p>Hearth has more than 800 automated tests. They all passed while the numbers were wrong.</p>
+
+    <p>A bug doubled the interest on our debts, and it was in the payoff plan. The app was confidently telling us to pay the wrong amounts and projecting a year of payments off bad math. No test caught it. I caught it by reading the screen and thinking "that's not right." The same thing happened with a mortgage balance that drifted, an autopay counter that miscounted, and labels that said the wrong thing. Every bug that mattered came from someone who knew what the numbers should look like.</p>
+
+    <p>I wasn't always right about why something was off. Sometimes I guessed the wrong cause. But I was right that something was off every time. It went the other way too: when I audited the app, Claude Code pushed back on several of my findings with reasons, and some of those were deliberate design choices I had misread. Review only works if both sides can say "no, here's why."</p>
+
+    <p>The other lesson was drift. In one week, five fixes reached the app's screens but never reached the tools Claude uses. The screens and Claude were quietly giving different answers to the same question.</p>
+
+    <h2 class="essay-heading">What I'd do differently</h2>
+
+    <p>I'd make the screens and the AI tools use the same code from day one, so a fix in one place is a fix everywhere and they can't disagree. I'd write checks for what a person would notice, like "interest can't be more than this" or "a balance can't jump without a transaction," instead of relying only on tests that confirm the code does what it was told. And I'd build review into the process from the start, not treat it as something that happened to catch bugs.</p>
+
+    <h2 class="essay-heading">What I took from it</h2>
+
+    <p>An AI system can pass every test and still give confidently wrong advice. The only reliable safeguard I found was a person who knows what right looks like, with a clear way to say so. That's the part of building with AI I want to keep doing.</p>
+
+  </div>
+
+  <div class="essay-footer">
+    <a href="/" class="essay-back"><span class="arrow">←</span> Back to work</a>
+    <div class="essay-footer-right">codycoppin.com · Austin, TX · © 2026</div>
+  </div>
+
+</div>
+
+</body>
+</html>
